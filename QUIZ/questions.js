@@ -1,11 +1,16 @@
 const answersList = document.querySelectorAll('ol.answers li');
 
+const corectedAnswers = {
+  question1:'A',
+  question2:'B',
+};
 answersList.forEach(li => li.addEventListener('click',checkClickedAnswer));
 function checkClickedAnswer(event){
   
   let clickedAnswerElement=event.currentTarget;
-  let selectedAnswer="A";
-  let correctedAnswer=clickedAnswerElement.dataset.answer;
+  let corectedAnswerId = clickedAnswerElement.closest('ol.answers').dataset.id;
+  let correctedAnswer=corectedAnswers[corectedAnswerId];
+  let selectedAnswer=clickedAnswerElement.dataset.answer;
 
   let message;
   let answerColorCode;
