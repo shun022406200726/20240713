@@ -1,18 +1,17 @@
 const answersList = document.querySelectorAll('ol.answers li');
 
 answersList.forEach(li => li.addEventListener('click',checkClickedAnswer));
-function checkClickedAnswer(event){
+function checkClickedAnswer(){
   
-  const clickAnswerElement=event.currentTarget;
+
   
   let message;
   let answerColorCode;
 
-  let selectedAnswer=clickAnswerElement.dataset.answer;
-  let corectedAnswer='A';
+
   
   
-  if(selectedAnswer === corectedAnswer){
+  if(){
     message='正解';
     answerColorCode ='';
   }else{
