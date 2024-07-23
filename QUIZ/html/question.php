@@ -2,9 +2,10 @@
 
 require __DIR__.'/../lib/function.php' ;
 $question='aaa';
-$id='2';
+$id='1';
 
 $data = fetchById($id);
+var_dump($data);
 
 $answers=[
     'A'=>'aaaa',
