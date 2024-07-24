@@ -5,17 +5,16 @@ $question='aaa';
 $id='1';
 
 $data = fetchById($id);
-var_dump($data);
 
 $answers=[
-    'A'=>'aaaa',
-    'B'=>'bbbb',
-    'C'=>'cccc',
-    'D'=>'dddd',
+    'A'=>$data[2],
+    'B'=>$data[3],
+    'C'=>$data[4],
+    'D'=>$data[5],
 ];
 
-$correctAnswer='B';
+$correctAnswer=strtoupper($data[6]);
 $correctAnswerValue=$answers[$correctAnswer];
-$explanation='解説解説'; 
+$explanation=$data[7]; 
 
 include __DIR__.'/../template/question.tpl.php';
