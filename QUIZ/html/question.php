@@ -5,16 +5,12 @@ require __DIR__.'/../lib/function.php' ;
 $id='1';
 
 $data = fetchById($id);
-$question=nl2br(htmlspecialchars($data[1]));
-$answers=[
-    'A'=>htmlspecialchars($data[2]),
-    'B'=>htmlspecialchars($data[3]),
-    'C'=>htmlspecialchars($data[4]),
-    'D'=>htmlspecialchars($data[5]),
-];
+$formattedData=generateFormttedData($data);
+$question=$formattedData['question'];
+$answers=$formattedData['answers'];
 
-$correctAnswer=strtoupper($data[6]);
+$correctAnswer=$formattedData['correctAnswer'];
 $correctAnswerValue=$answers[$correctAnswer];
-$explanation=nl2br(htmlspecialchars($data[7])); 
+$explanation=$formattedData['explanation']; 
 
 include __DIR__.'/../template/question.tpl.php';
